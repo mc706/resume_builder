@@ -1,0 +1,4 @@
+[{% for template in templates %}
+    {% include "api/template.json" with template=template %}{%if not forloop.last%},{%endif%}
+{% endfor %}
+]

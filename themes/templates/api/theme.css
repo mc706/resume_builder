@@ -1,3 +1,4 @@
-{% for style in theme.styles %}
-{{style.style}}
+{{template.global_styles}}
+{% for style in template.styles %}
+    {{style.get_style}}
 {% endfor %}
