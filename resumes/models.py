@@ -28,26 +28,21 @@ class Resume(models.Model):
         verbose_name_plural = 'resumes'
 
 
+class SectionType(models.Model):
+    name = models.CharField(max_length=100)
+    html_class = models.CharField(max_length=20)
+
+    def __unicode__(self):
+        return self.name
+
+
 class Section(models.Model):
     """
     Section
     """
     resume = models.ForeignKey(Resume, related_name='sections')
-    section_type = models.CharField(max_length=20, choices=(
-        ('summary', 'Summary'),
-        ('experience', 'Experience'),
-        ('skills', 'Skills'),
-        ('education', 'Education'),
-        ('languages', 'Languages'),
-        ('projects', 'Projects'),
-        ('volunteer', 'Volunteer'),
-    ))
+    section_type = models.ForeignKey(SectionType)
     title = models.CharField(max_length=100)
-    html_class = models.SlugField(blank=True)
-
-    def save(self, *args, **kwargs):
-        self.slug = slugify(self.title)
-        super(Section, self).save(*args, **kwargs)
 
     def __unicode__(self):
         return self.resume + '(' + self.title + ')'

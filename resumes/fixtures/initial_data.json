@@ -1,0 +1,58 @@
+[
+    {
+        "model": "resumes.SectionType",
+        "pk": 1,
+        "fields": {
+            "name": "Summary",
+            "html_class": "summary"
+        }
+    },
+    {
+        "model": "resumes.SectionType",
+        "pk": 2,
+        "fields": {
+            "name": "Experience",
+            "html_class": "experience"
+        }
+    },
+    {
+        "model": "resumes.SectionType",
+        "pk": 3,
+        "fields": {
+            "name": "Education",
+            "html_class": "education"
+        }
+    },
+    {
+        "model": "resumes.SectionType",
+        "pk": 4,
+        "fields": {
+            "name": "Skills",
+            "html_class": "skills"
+        }
+    },
+    {
+        "model": "resumes.SectionType",
+        "pk": 5,
+        "fields": {
+            "name": "Languages",
+            "html_class": "languages"
+        }
+    },
+    {
+        "model": "resumes.SectionType",
+        "pk": 6,
+        "fields": {
+            "name": "Projects",
+            "html_class": "projects"
+        }
+    },
+    {
+        "model": "resumes.SectionType",
+        "pk": 7,
+        "fields": {
+            "name": "Volunteer",
+            "html_class": "volunteer"
+        }
+    }
+]
