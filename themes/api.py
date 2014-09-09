@@ -15,4 +15,4 @@ def template(request, template_slug):
 
 def template_css(request, template_slug):
     template = get_object_or_404(Template, slug=template_slug)
-    return HttpResponse(status=200, content_type="text/css", content_type=render(request, "api/theme.css", {'template':template}))
+    return HttpResponse(status=200, content_type="text/css", content_type=render(request, "api/theme.css.template", {'template':template}))
