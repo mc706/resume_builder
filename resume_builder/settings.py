@@ -81,4 +81,11 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 
+TEMPLATE_DIRS = (os.path.join(BASE_DIR,  'templates'),)
+STATICFILES_DIRS = (BASE_DIR + '/assets',)
 STATIC_URL = '/static/'
+
+try:
+    from local_settings import *
+except ImportError as exp:
+    pass
