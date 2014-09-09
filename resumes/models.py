@@ -33,6 +33,14 @@ class Section(models.Model):
     Section
     """
     resume = models.ForeignKey(Resume, related_name='sections')
+    section_type = models.CharField(max_length=20, choices=(
+        ('summary', 'Summary'),
+        ('experience', 'Experience'),
+        ('skills', 'Skills'),
+        ('education', 'Education'),
+        ('languages', 'Languages'),
+        ('projects', 'Projects'),
+    ))
     title = models.CharField(max_length=100)
     html_class = models.SlugField(blank=True)
 
