@@ -40,6 +40,7 @@ class Section(models.Model):
         ('education', 'Education'),
         ('languages', 'Languages'),
         ('projects', 'Projects'),
+        ('volunteer', 'Volunteer'),
     ))
     title = models.CharField(max_length=100)
     html_class = models.SlugField(blank=True)
