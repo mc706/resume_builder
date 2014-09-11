@@ -1,6 +1,6 @@
 {
     "name": "{{template.name}}",
-    "author": "{{template.creator.username",
+    "author": "{{template.creator.username}}",
     "date_created": "{{template.date_created}}",
     "date_modified": "{{template.date_modified}}",
     "style": "{{template.get_css_url}}"

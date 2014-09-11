@@ -1,0 +1,4 @@
+[{% for style in styles %}
+    {% include "api/style.json" with style=style %}{%if not forloop.last%},{%endif%}
+{% endfor %}
+]

@@ -1,0 +1,4 @@
+{
+    "section": "{{style.section}}",
+    "styles": "{{ style.styles }}"
+}
