@@ -1,0 +1,4 @@
+[{% for resume in resumes %}
+    {% include "api/resume.json" with resume=resume %}{%if not forloop.last%},{%endif%}
+{% endfor %}
+]

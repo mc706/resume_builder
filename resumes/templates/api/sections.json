@@ -1,0 +1,4 @@
+[{% for section in sections %}
+    {% include "api/section.json" with section=section %}{%if not forloop.last%},{%endif%}
+{% endfor %}
+]

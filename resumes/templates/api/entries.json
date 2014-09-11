@@ -1,0 +1,4 @@
+[{% for entry in entries %}
+    {% include "api/entry.json" with entry=entry %}{%if not forloop.last%},{%endif%}
+{% endfor %}
+]
