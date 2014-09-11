@@ -8,6 +8,7 @@ class Resume(models.Model):
     Resume model
     """
     title = models.CharField(max_length=100)
+    slug = models.SlugField(blank=True)
 
     name = models.CharField(max_length=100)
     address1 = models.CharField(max_length=100, blank=True)
@@ -22,6 +23,10 @@ class Resume(models.Model):
 
     def __unicode__(self):
         return self.account.username + '-' + self.title
+
+    def save(self, *args, **kwargs):
+        self.slug = slugify(self.title)
+        super(Resume, self).save(*args, **kwargs)
 
     class Meta:
         verbose_name = 'resume'
@@ -43,9 +48,14 @@ class Section(models.Model):
     resume = models.ForeignKey(Resume, related_name='sections')
     section_type = models.ForeignKey(SectionType)
     title = models.CharField(max_length=100)
+    slug = models.SlugField(blank=True)
 
     def __unicode__(self):
         return self.resume + '(' + self.title + ')'
+
+    def save(self, *args, **kwargs):
+        self.slug = slugify(self.title)
+        super(Section, self).save(*args, **kwargs)
 
     class Meta:
         verbose_name = 'section'
@@ -58,6 +68,7 @@ class Entry(models.Model):
     """
     section = models.ForeignKey(Section, related_name='entries')
     title = models.CharField(max_length=100, blank=True)
+    slug = models.SlugField(blank=True)
     subtitle = models.CharField(max_length=100, blank=True)
     date_start = models.CharField(max_length=50, blank=True)
     date_finish = models.CharField(max_length=50, blank=True)
@@ -65,6 +76,10 @@ class Entry(models.Model):
 
     def __unicode__(self):
         return self.section + '['+self.title+']'
+
+    def save(self, *args, **kwargs):
+        self.slug = slugify(self.title)
+        super(Entry, self).save(*args, **kwargs)
 
     class Meta:
         verbose_name = 'entry'

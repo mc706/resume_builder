@@ -1,0 +1,6 @@
+{
+    "section_type": "{{section.section_type}}",
+    "title": "{{section.title}}",
+    "slug": "{{section.slug}}",
+    "entries": {% include 'api/entries.json' with entries=section.entries%}
+}
