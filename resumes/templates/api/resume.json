@@ -1,0 +1,12 @@
+{
+    "title": "{{resume.title}}",
+    "slug": "{{resume.slug}}",
+    "name": "{{resume.name}}",
+    "address1": "{{resume.address1}}",
+    "address2": "{{resume.address2}}",
+    "csz": "{{resume.csz}}",
+    "email": "{{resume.email}}",
+    "phone": "{{resume.phone}}",
+    "date_created": "{{resume.date_created}}",
+    "date_modified": "{{resume.date_modified}}"
+}

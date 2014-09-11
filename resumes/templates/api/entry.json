@@ -1,0 +1,8 @@
+{
+    "title": "{{entry.title}}",
+    "slug": "{{entry.slug}}",
+    "subtitle": "{{entry.subtitle}}",
+    "date_start": "{{entry.date_start}}",
+    "date_finish": "{{entry.date_finish}}",
+    "description": "{{entry.description}}"
+}
